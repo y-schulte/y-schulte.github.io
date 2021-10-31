@@ -1,0 +1,12 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 98" width="456" height="465">
+	<title>styled_profile-svg</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #607d8b } 
+	</style>
+	<g id="Layer">
+		<g id="Layer">
+			<path id="Layer" fill-rule="evenodd" class="shp0" d="M6 88L6 80.6C6 62.6 20.6 48 38.7 48L38.9 48C31.3 44.5 26 36.9 26 28C26 15.9 35.9 6 48 6C60.1 6 70 15.9 70 28C70 36.9 64.7 44.5 57.2 48L57.4 48C75.4 48 90 62.6 90 80.6L90 88C90 89.1 89.1 90 88 90C86.9 90 86 89.1 86 88L86 80.6C86 64.8 73.2 52 57.4 52L38.6 52C22.8 52 10 64.8 10 80.6L10 88C10 89.1 9.1 90 8 90C6.9 90 6 89.1 6 88ZM48 46C57.9 46 66 37.9 66 28C66 18.1 57.9 10 48 10C38.1 10 30 18.1 30 28C30 37.9 38.1 46 48 46Z" />
+		</g>
+	</g>
+</svg>

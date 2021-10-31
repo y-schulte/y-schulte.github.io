@@ -1,0 +1,889 @@
+/*General Settings*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*HEADER & NAVBAR*/
+header {
+  display: flex;
+  flex-flow: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.logo,
+.hamburger-menu {
+  /*border: solid 2px blue;*/
+  height: 69px;
+  width: 69px;
+}
+
+.hamburger-menu {
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/*LOGO*/
+.logo {
+  height: 69px;
+  width: 69px;
+  position: relative;
+  overflow: hidden;
+  transition: width 3s cubic-bezier(0, 0.995, 0.8, 1.005);
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.logo:before {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 69px;
+  z-index: 2;
+  background-color: #fff;
+  right: 0px;
+  top: 0;
+  /*border: solid 2px blue;*/
+}
+
+/*span.b {
+  height: 23px;
+  position: absolute;
+  left: 29px;
+  top: 23px;
+  z-index: 1;
+  border: solid 2px blue;
+}*/
+span.ys {
+  height: 69px;
+  position: absolute;
+  left: 15px;
+  top: 23px;
+  z-index: 1;
+  /*border: solid 2px blue;*/
+}
+
+.ys {
+  color: #e25068;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 18px;
+  font-feature-settings: "liga" 0, "rlig" 0, "dlig" 0, "hlig" 0, "smcp" 0;
+  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;*/
+  font-style: normal;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.logo:hover {
+  width: 172px;
+}
+
+/*MENU*/
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  z-index: 1;
+}
+
+#menuToggle div {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: #ff5722;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide input line */
+  z-index: 2;
+  /* and place it over the hamburger */
+}
+
+/* Hamburger*/
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #fff;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+ Transform slices of hamburger into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #fff;
+}
+
+/*
+ & Let's hide the middle line in the hamburge.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*Last line of the hamburger should go the other direction*/
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/* Make menu positioned at the top left of the screen*/
+.menu {
+  position: absolute;
+  margin: -52px 0 0 -50px;
+  padding: 50px;
+  background-color: #000;
+  /*border: solid 2px blue;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*transform-origin: 0% 0%;*/
+  transform: translate(-100%, 0);
+}
+
+/*Let's slide it in from the left */
+#menuToggle input:checked ~ .menu {
+  transform: none;
+  /*1st option that didn't trigger the smooth transition property*/
+  /*2nd option that triggered it well:*/
+  /*transform: translate(0, 0);*/
+  transition: transform 1.5s cubic-bezier(0, 0.995, 0.8, 1.005);
+}
+
+.menuFlex {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /*border: solid 2px blue;*/
+}
+
+.menuList,
+.menuContact {
+  margin: 25px 10px;
+  /*border: solid 2px blue;*/
+}
+
+.menuContact {
+  font-size: 2.5rem;
+}
+
+.menuList {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 30px;
+  font-feature-settings: "liga" 0, "rlig" 0, "dlig" 0, "hlig" 0, "smcp" 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.menuList div:hover {
+  color: #ff5722;
+}
+
+/*2. TOP SECTION */
+main {
+  width: 100%;
+  height: 100vh;
+  background-color: #c0b9b9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+/*For later: to make a loop overlay*/
+/*.mainOverlay {
+  width: 700px;
+  height: 700px;
+  color: #e25068;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  z-index: 100;
+}*/
+.topText .topTextHeader1,
+.topTextHeader2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  z-index: 1;
+}
+
+h1,
+h2 {
+  color: #fff;
+  /*border: solid 2px blue;*/
+  z-index: 100;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 30px 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 18px;
+  font-feature-settings: "liga" 0, "rlig" 0, "dlig" 0, "hlig" 0, "smcp" 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h3 {
+  font-size: 3rem;
+  color: #795548;
+  margin: 10px 0;
+  padding: 0 20px;
+}
+
+span {
+  font-weight: 800;
+  color: #f5f5f5;
+}
+
+.letter {
+  color: #e25068;
+}
+
+/*2. TOP SECTION - ARROW */
+.homearrow {
+  position: absolute;
+  top: 85%;
+  height: 80px;
+  width: 100%;
+  /*border: solid 2px blue;*/
+}
+
+#arrowdown {
+  position: relative;
+  top: 0;
+  left: 50%;
+  width: 1.2px;
+  background: #fff;
+  content: " ";
+  animation: scrolldown 2.4s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+/* Make an element move gradually */
+@keyframes scrolldown {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 80px;
+  }
+}
+/*3. Cards with Paralax Effect*/
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  margin: 25px 0;
+  /*border: solid 2px blue;*/
+}
+
+.cards div {
+  flex: 1 100%;
+  /*takes full width on smaller devices*/
+  /*border: solid 2px blue;*/
+}
+
+.stickyContainer1 {
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /*background-color: lemonchiffon;*/
+}
+
+.stickyContainer2 {
+  /*background-color: rosybrown;*/
+  height: 25vh;
+  display: flex;
+  align-items: center;
+}
+
+a h3:hover {
+  color: #673ab7;
+}
+
+.staticContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /*border: solid 2 px blue;*/
+}
+
+.staticContainer1 {
+  /*background-color: rgb(190, 88, 44);*/
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+.staticContainer1:nth-child(2n) {
+  justify-content: flex-start;
+}
+
+/*CARD1*/
+.shape1 {
+  width: 250px;
+  height: 250px;
+  clip-path: circle(50% at 50% 50%);
+  background: #ffc107;
+  z-index: 10;
+  position: absolute;
+  left: 8%;
+  top: 25px;
+  transition: all 2s cubic-bezier(0, 0.795, 0.8, 0.955);
+  opacity: 0.3;
+}
+
+.staticContainer:hover .shape1 {
+  clip-path: circle(50.1% at 98% 50%);
+}
+
+.stickyImg1 {
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  left: 20%;
+  top: 45px;
+  z-index: 20;
+  /*border: solid 2 px blue;*/
+}
+
+/*CARD2*/
+.shape2 {
+  width: 250px;
+  height: 250px;
+  clip-path: circle(50% at 50% 50%);
+  background: #673ab7;
+  z-index: 10;
+  position: absolute;
+  right: 8%;
+  top: 25px;
+  transition: all 2s cubic-bezier(0, 0.395, 0.8, 0.355);
+  opacity: 0.3;
+}
+
+.staticContainer:hover .shape2 {
+  clip-path: circle(50.1% at 98% 50%);
+}
+
+.stickyImg2 {
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  right: 23%;
+  top: 55px;
+  z-index: 20;
+  border: solid 2 px blue;
+}
+
+/*CARD3*/
+.shape3 {
+  width: 250px;
+  height: 250px;
+  clip-path: circle(50% at 50% 50%);
+  background: #607d8b;
+  z-index: 10;
+  position: absolute;
+  left: 8%;
+  top: 25px;
+  transition: all 2s cubic-bezier(0, 0.395, 0.8, 0.355);
+  opacity: 0.3;
+}
+
+.staticContainer:hover .shape3 {
+  clip-path: circle(50.1% at 98% 50%);
+}
+
+.stickyImg3 {
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  left: 20%;
+  top: 45px;
+  z-index: 20;
+  border: solid 2 px blue;
+}
+
+/*CARD4*/
+.shape4 {
+  width: 250px;
+  height: 250px;
+  clip-path: circle(50% at 50% 50%);
+  background: #ff5722;
+  z-index: 10;
+  position: absolute;
+  right: 8%;
+  top: 25px;
+  transition: all 2s cubic-bezier(0, 0.395, 0.8, 0.355);
+  opacity: 0.7;
+}
+
+.staticContainer:hover .shape4 {
+  clip-path: circle(50.1% at 98% 50%);
+}
+
+.stickyImg4 {
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  right: 20%;
+  top: 42px;
+  z-index: 20;
+  border: solid 2 px blue;
+}
+
+/*4. Footer*/
+/* TOP FOOTER */
+.footer-top {
+  background-color: #84a59d;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 50px 20px;
+  margin-top: 100px;
+  /*border: solid 2px blue;*/
+}
+
+.footer-top p {
+  font-size: 4rem;
+  color: #fff;
+  text-align: center;
+}
+
+p.pink {
+  margin-top: 20px;
+  color: #e25068;
+}
+
+/* BOTTOM FOOTER */
+footer {
+  background-color: #000;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /*border: solid 2px blue;*/
+}
+
+footer * {
+  color: #fff;
+  padding: 5px 0;
+  /*border: solid 2px blue;*/
+}
+
+.footerLogo {
+  margin: 15px 20px;
+}
+
+.footerList,
+.footerContact {
+  margin: 10px 20px;
+}
+
+.footerLogo,
+.footerList {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 18px;
+  font-feature-settings: "liga" 0, "rlig" 0, "dlig" 0, "hlig" 0, "smcp" 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.footerContact span {
+  font-weight: 800;
+}
+
+/* ------------------------------------------------------------------ */
+/* Media */
+@media all and (min-width: 600px) {
+  h1 {
+    padding: 0 25vw;
+    font-size: 6rem;
+  }
+
+  h2 {
+    padding: 0 35vw;
+  }
+
+  h3 {
+    font-size: 6rem;
+  }
+
+  /*HAMBURGER MENU*/
+  .menu {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .menuFlex {
+    width: 100vw;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menuList,
+  .menuContact {
+    margin: 25px 100px;
+    text-align: left;
+  }
+
+  .menuContact {
+    font-size: 3rem;
+  }
+
+  .menuList {
+    font-size: 3rem;
+    line-height: 40px;
+  }
+
+  /*CARDS*/
+  .cards {
+    flex-direction: row;
+  }
+
+  .cards div {
+    flex: 50%;
+    /*make all elements take 50% of the flex row for larger screens*/
+  }
+
+  /*will reverse each even section*/
+  .cards:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+  }
+
+  .stickyContainer1,
+  .stickyContainer2 {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 200px;
+  }
+
+  .staticContainer1 {
+    height: 350px;
+    width: 350px;
+  }
+
+  /*Individual Cards*/
+  /*CARD1*/
+  .shape1 {
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+    left: 10%;
+    top: 25px;
+  }
+
+  .stickyImg1 {
+    width: 70%;
+    height: 70%;
+    left: 15.5%;
+    top: 42px;
+  }
+
+  /*CARD2*/
+  .shape2 {
+    width: 300px;
+    height: 300px;
+    left: 10%;
+    top: 25px;
+  }
+
+  .stickyImg2 {
+    width: 70%;
+    height: 70%;
+    left: 12%;
+    top: 50px;
+  }
+
+  /*CARD3*/
+  .shape3 {
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+    left: 10%;
+    top: 25px;
+  }
+
+  .stickyImg3 {
+    width: 70%;
+    height: 70%;
+    left: 15%;
+    top: 42px;
+  }
+
+  /*CARD4*/
+  .shape4 {
+    width: 300px;
+    height: 300px;
+    left: 10%;
+    top: 25px;
+  }
+
+  .stickyImg4 {
+    width: 70%;
+    height: 70%;
+    left: 16%;
+    top: 43px;
+  }
+
+  /*FOOTER*/
+  /*.footer-top {
+    height: 50vh;
+  }*/
+  .footer-top p {
+    font-size: 6rem;
+  }
+
+  footer {
+    height: 50vh;
+  }
+
+  footer {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-top: 100px;
+  }
+
+  footer * {
+    text-align: left;
+  }
+}
+@media (min-width: 900px) {
+  .footer-top {
+    height: 50vh;
+  }
+
+  .staticContainer1 {
+    height: 350px;
+    width: 450px;
+  }
+
+  /*Individual Cards*/
+  /*CARD1*/
+  .shape1 {
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+    left: 35%;
+    top: 25px;
+  }
+
+  .stickyImg1 {
+    width: 70%;
+    height: 70%;
+    left: 30%;
+    top: 42px;
+  }
+
+  /*CARD2*/
+  .shape2 {
+    width: 300px;
+    height: 300px;
+    left: 5%;
+    top: 25px;
+  }
+
+  .stickyImg2 {
+    width: 70%;
+    height: 70%;
+    left: -2.5%;
+    top: 42px;
+  }
+
+  /*CARD3*/
+  .shape3 {
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+    left: 35%;
+    top: 25px;
+  }
+
+  .stickyImg3 {
+    width: 70%;
+    height: 70%;
+    left: 30%;
+    top: 42px;
+  }
+
+  /*CARD4*/
+  .shape4 {
+    width: 300px;
+    height: 300px;
+    left: 5%;
+    top: 25px;
+  }
+
+  .stickyImg4 {
+    width: 70%;
+    height: 70%;
+    left: 0%;
+    top: 42px;
+  }
+}
+@media all and (min-width: 1200px) {
+  /*Individual Cards*/
+  /*CARD1*/
+  .shape1 {
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+    left: 55%;
+    top: 25px;
+  }
+
+  .stickyImg1 {
+    width: 70%;
+    height: 70%;
+    left: 41%;
+    top: 42px;
+  }
+
+  /*CARD2*/
+  .shape2 {
+    width: 300px;
+    height: 300px;
+    left: 3%;
+    top: 25px;
+  }
+
+  .stickyImg2 {
+    width: 70%;
+    height: 70%;
+    left: -12.5%;
+    top: 60px;
+  }
+
+  /*CARD3*/
+  .shape3 {
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+    left: 55%;
+    top: 25px;
+  }
+
+  .stickyImg3 {
+    width: 70%;
+    height: 70%;
+    left: 41%;
+    top: 42px;
+  }
+
+  /*CARD4*/
+  .shape4 {
+    width: 300px;
+    height: 300px;
+    left: 3%;
+    top: 25px;
+  }
+
+  .stickyImg4 {
+    width: 70%;
+    height: 70%;
+    left: -8.5%;
+    top: 55px;
+  }
+}
+/*For testing*/
+body {
+  font-size: 2rem;
+  background-color: #e2e2e2;
+}
+
+/*# sourceMappingURL=styles.css.map */
