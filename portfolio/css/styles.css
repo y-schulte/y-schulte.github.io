@@ -172,7 +172,7 @@ a:hover > div {
   align-content: center;
   /*border: solid 2px blue;*/
   height: 50vh;
-  margin-top: 200px; }
+  margin-top: 100px; }
 
 .menuList,
 .menuContact {
@@ -219,7 +219,7 @@ p.pink {
 }*/
 .footer_bottom {
   position: relative;
-  top: 15vh;
+  top: 10vh;
   color: #fff;
   font-size: 2rem;
   background-color: #84a59d;
