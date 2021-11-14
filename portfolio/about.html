@@ -8,7 +8,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>FlexLayout</title>
+    <title>My Portfolio Website</title>
     <link rel="stylesheet" href="css/about.css" />
   </head>
 
@@ -19,7 +19,45 @@
         <span class="ys">Y.SCHULTE</span>
       </div>
 
-      <div class="hamburger-menu">Menu</div>
+      <div class="hamburger-menu">
+        <div id="menuToggle">
+          <!--
+            A fake / hidden checkbox is used as click reciever,
+            so you can use the :checked selector on it.
+            -->
+          <input type="checkbox" />
+
+          <!--
+            Some spans to act as a hamburger.
+          
+            -->
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <!--
+            Menu inside of the button
+            -->
+
+          <div class="menu">
+            <div class="menuFlex">
+          <div class="menuList">
+            <a href="about.html"><div>About</div></a>
+            <a href="works.html"><div>Works</div></a>
+            <a href="https://docs.google.com/document/d/12U-h4_Dfx0aLfvxVXk3znplsmj4FYCwgCajyLkNFk_4/edit?usp=sharing" target="_blank">
+              <div>Resume</div></a>
+            <a href="https://github.com/y-schulte" target="_blank"><div>Github</div></a>
+          </div>
+    
+          <div class="menuContact">
+            <div><b>Let's build nice things together</b></div>
+            <div>yulia.schulte@gmail.com</div>
+            <div>+39 0575 29 94 84</div>
+          </div>
+        </div>
+        </div>
+
+      </div>
     </header>
 
     <!----------CONTENT------------->

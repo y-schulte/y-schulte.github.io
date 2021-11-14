@@ -16,7 +16,7 @@ header {
 }
 
 .hamburger-menu {
-  background-color: #000;
+  background-color: #2b242d;
   color: white;
   display: flex;
   justify-content: center;
@@ -38,8 +38,8 @@ header {
 .logo:before {
   content: "";
   position: absolute;
-  width: 17px;
-  height: 69px;
+  width: 18px;
+  height: 68px;
   z-index: 2;
   background-color: #fff;
   right: 0px;
@@ -60,7 +60,7 @@ span.ys {
   height: 69px;
   position: absolute;
   left: 15px;
-  top: 23px;
+  top: 27px;
   z-index: 1;
   /*border: solid 2px blue;*/
 }
@@ -81,9 +81,9 @@ span.ys {
   -webkit-font-smoothing: antialiased;
 }
 
-img {
-  vertical-align: middle;
-}
+//not used:
+//
+
 .logo:hover {
   width: 172px;
 }
@@ -94,8 +94,7 @@ img {
   position: absolute;
   top: 25px;
   left: 15px;
-
-  z-index: 1;
+  z-index: 2;
 }
 
 #menuToggle div {
@@ -114,9 +113,7 @@ a:hover > div {
   position: absolute;
   top: -7px;
   left: -5px;
-
   cursor: pointer;
-
   opacity: 0; /* hide input line */
   z-index: 2; /* and place it over the hamburger */
 }
@@ -173,14 +170,16 @@ a:hover > div {
 /* Make menu positioned at the top left of the screen*/
 .menu {
   position: absolute;
-  margin: -52px 0 0 -50px;
+  margin: -125px 0 0 -20px;
   padding: 50px;
-  background-color: #000;
+  background-color: #2b242d;
   /*border: solid 2px blue;*/
-
+  border-radius: 0 120% 120% 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  width: 90vw;
+  height: 120vh;
 
   /*transform-origin: 0% 0%;*/
   transform: translate(-100%, 0);
@@ -198,19 +197,21 @@ a:hover > div {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-content: center;
   /*border: solid 2px blue;*/
+  height: 50vh;
+  margin-top: 250px;
 }
 
 .menuList,
 .menuContact {
-  margin: 25px 10px;
+  margin: 35px 0px;
   /*border: solid 2px blue;*/
 }
 
 .menuContact {
   font-size: 2.5rem;
+  text-align: center;
 }
 
 .menuList {
@@ -227,48 +228,135 @@ a:hover > div {
 }
 
 /*FOOTER*/
-
-footer {
-  background-color: #000;
+.footer-top {
+  background-color: #84a59d;
   display: flex;
-  flex-flow: column;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  padding: 50px 20px;
+  height: 100vh;
   /*border: solid 2px blue;*/
 }
 
-footer * {
+.footer-top p {
+  font-size: 5rem;
   color: #fff;
-  padding: 5px 0;
-  /*border: solid 2px blue;*/
-}
-
-.footerLogo {
-  margin: 10px 20px;
-}
-
-.footerList,
-.footerContact {
-  margin: 0 20px;
-}
-
-.footerLogo,
-.footerList {
-  font-size: 1.5rem;
-  text-transform: uppercase;
   text-align: center;
-  line-height: 18px;
-
-  font-feature-settings: "liga" 0, "rlig" 0, "dlig" 0, "hlig" 0, "smcp" 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased;
 }
 
-.footerContact span {
-  font-weight: 800;
+p.pink {
+  margin-top: 20px;
+  color: #e25068;
+}
+
+.footer {
+  position: absolute;
+  margin-bottom: -700px;
+  font-size: 2rem;
+}
+
+//NOT USED:
+// footer {
+//   background-color: #000;
+//   display: flex;
+//   flex-flow: column;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+//   /*border: solid 2px blue;*/
+// }
+
+// footer * {
+//   color: #fff;
+//   padding: 5px 0;
+//   /*border: solid 2px blue;*/
+// }
+
+// .footerLogo {
+//   margin: 10px 20px;
+// }
+
+// .footerList,
+// .footerContact {
+//   margin: 0 20px;
+// }
+
+// .footerLogo,
+// .footerList {
+//   font-size: 1.5rem;
+//   text-transform: uppercase;
+//   text-align: center;
+//   line-height: 18px;
+
+//   font-feature-settings: "liga" 0, "rlig" 0, "dlig" 0, "hlig" 0, "smcp" 0;
+//   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+//     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+//   font-weight: 400;
+//   font-style: normal;
+//   text-rendering: optimizelegibility;
+//   -webkit-font-smoothing: antialiased;
+// }
+
+// .footerContact span {
+//   font-weight: 800;
+// }
+
+/*MEDIA*/
+@media all and (min-width: 600px) {
+  /*HAMBURGER MENU*/
+  .menu {
+    // height: 100vh;
+    // width: 80vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menuFlex {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+  }
+
+  .menuList,
+  .menuContact {
+    margin: 0px 50px;
+    text-align: left;
+  }
+
+  .menuContact {
+    font-size: 4rem;
+  }
+
+  .menuList {
+    font-size: 3.5rem;
+    line-height: 50px;
+  }
+
+  /*FOOTER*/
+  /*.footer-top {
+    height: 50vh;
+  }*/
+
+  // .footer-top p {
+  //   font-size: 6rem;
+  // }
+
+  // footer {
+  //   height: 50vh;
+  // }
+
+  // footer {
+  //   display: flex;
+  //   flex-flow: row;
+  //   align-items: flex-start;
+  //   justify-content: space-evenly;
+  //   padding-top: 100px;
+  // }
+
+  // footer * {
+  //   text-align: left;
+  // }
 }

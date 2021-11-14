@@ -72,12 +72,6 @@ span.ys {
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased; }
 
-img {
-  vertical-align: middle; }
-
-.logo:hover {
-  width: 172px; }
-
 /*MENU*/
 #menuToggle {
   display: block;
@@ -90,7 +84,7 @@ img {
   color: #fff;
   transition: color 0.3s ease; }
 
-#menuToggle a:hover {
+a:hover > div {
   color: #ff5722; }
 
 #menuToggle input {
@@ -150,7 +144,7 @@ img {
   margin: -52px 0 0 -50px;
   padding: 50px;
   background-color: #000;
-  /*border: solid 2px blue;*/
+  border: solid 2px blue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,12 +165,12 @@ img {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /*border: solid 2px blue;*/ }
+  border: solid 2px blue; }
 
 .menuList,
 .menuContact {
   margin: 25px 10px;
-  /*border: solid 2px blue;*/ }
+  border: solid 2px blue; }
 
 .menuContact {
   font-size: 2.5rem; }
@@ -229,6 +223,53 @@ footer * {
 .footerContact span {
   font-weight: 800; }
 
+/*MEDIA*/
+@media all and (min-width: 600px) {
+  /*HAMBURGER MENU*/
+  .menu {
+    height: 100vh; }
+
+  .menuFlex {
+    width: 100vw;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center; }
+
+  .menuList,
+  .menuContact {
+    margin: 25px 50px;
+    text-align: left; }
+
+  .menuContact {
+    font-size: 3rem; }
+
+  .menuList {
+    font-size: 3rem;
+    line-height: 40px; }
+
+  /*FOOTER*/
+  /*.footer-top {
+    height: 50vh;
+  }*/
+  .footer-top p {
+    font-size: 6rem; }
+
+  footer {
+    height: 50vh; }
+
+  footer {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-top: 100px; }
+
+  footer * {
+    text-align: left; } }
+@media (min-width: 900px) {
+  .footer-top {
+    height: 50vh; } }
 /*GENERAL SETTINGS*/
 *,
 *::after,
@@ -289,46 +330,9 @@ h3 {
 .fc2 {
   background-size: cover;
   background-position: center;
-  height: 70vh;
-  /*height: 100%;*/ }
-
-/*FOOTER*/
-footer {
-  background-color: #000;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  /*border: solid 2px blue;*/ }
-
-footer * {
-  color: #fff;
-  padding: 5px 0;
-  /*border: solid 2px blue;*/ }
-
-.footerLogo {
-  margin: 15px 20px; }
-
-.footerList,
-.footerContact {
-  margin: 10px 20px; }
-
-.footerLogo,
-.footerList {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 18px;
-  font-feature-settings: "liga" 0, "rlig" 0, "dlig" 0, "hlig" 0, "smcp" 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased; }
-
-.footerContact span {
-  font-weight: 800; }
+  width: 100%;
+  max-width: 500px;
+  height: auto; }
 
 /*MEDIA*/
 @media all and (min-width: 600px) {
@@ -339,16 +343,6 @@ footer * {
 
   .fc2 {
     flex: 3 0px;
-    /*flex: 3 0px;*/ }
-
-  footer {
-    height: 50vh; }
-
-  footer {
-    display: flex;
-    flex-flow: row;
-    align-items: flex-start;
-    justify-content: space-around;
-    padding-top: 120px; } }
+    /*flex: 3 0px;*/ } }
 
 /*# sourceMappingURL=about.css.map */
