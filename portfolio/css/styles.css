@@ -194,7 +194,7 @@ a:hover > div {
   font-style: normal; }
 
 /*FOOTER*/
-.footer-top {
+.footer {
   background-color: #84a59d;
   display: flex;
   flex-direction: column;
@@ -204,7 +204,7 @@ a:hover > div {
   height: 100vh;
   /*border: solid 2px blue;*/ }
 
-.footer-top p {
+.footer p {
   font-size: 5rem;
   color: #fff;
   text-align: center; }
@@ -213,10 +213,17 @@ p.pink {
   margin-top: 20px;
   color: #e25068; }
 
-.footer {
-  position: absolute;
-  margin-bottom: -700px;
-  font-size: 2rem; }
+/*
+.footer_top {
+  border: solid 2px blue;
+}*/
+.footer_bottom {
+  position: relative;
+  top: 20vh;
+  color: #fff;
+  font-size: 2rem;
+  background-color: #84a59d;
+  /*border: solid 2px blue;*/ }
 
 /*MEDIA*/
 @media all and (min-width: 600px) {
@@ -245,6 +252,9 @@ p.pink {
     line-height: 50px; }
 
   /*FOOTER*/
+  .footer_bottom {
+    top: 35vh; }
+
   /*.footer-top {
     height: 50vh;
   }*/ }
