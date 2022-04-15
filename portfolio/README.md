@@ -3,7 +3,7 @@
 My first static website (personal portfolio) after 2 months of HTML / CSS training
 Repo: https://github.com/y-schulte/pages/tree/main/portfolio
 
-Status: work in progress.
+Status: work in progress. Pages with portfolio projects are not finished yet.  
 
 Summary:
 
